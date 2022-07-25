@@ -1,4 +1,4 @@
-# For potato leaf disease prediction
+#potato leaf disease identification and classification
 import streamlit as st
 from PIL import Image
 import numpy as np
@@ -14,7 +14,7 @@ hide_streamlit_style = """
             """
 st.markdown(hide_streamlit_style, unsafe_allow_html = True)
 
-st.title('Potato Leaf Disease Prediction')
+st.title('Potato Leaf Disease Identification And Classification')
 
 def main() :
     file_uploaded = st.file_uploader('Choose an image...', type = 'jpg')
@@ -34,7 +34,7 @@ def predict_class(image) :
         classifier_model = keras.models.load_model(r'final_model.h5', compile = False)
 
     shape = ((256,256,3))
-    model = keras.Sequential([hub.KerasLayer(classifier_model, input_shape = shape)])     # ye bhi kaam kar raha he
+    model = keras.Sequential([hub.KerasLayer(classifier_model, input_shape = shape)])    
     test_image = image.resize((256, 256))
     test_image = keras.preprocessing.image.img_to_array(test_image)
     test_image /= 255.0
@@ -71,7 +71,7 @@ a:hover,  a:active {
 </style>
 
 <div class="footer">
-<p align="center"> <a href="https://www.linkedin.com/in/ronylpatil/">Developed with ❤ by ronil</a></p>
+<p align="center"> <a by mas boy</a></p>
 </div>
         """
 
