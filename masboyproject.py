@@ -31,7 +31,7 @@ def main() :
 
 def predict_class(image) :
     with st.spinner('Loading Model...'):
-        classifier_model = keras.models.load_model(r'potatoes.h5', compile = False)
+        classifier_model = keras.models.load_model(r'masboy.h5', compile = False)
 
     shape = ((256,256,3))
     model = keras.Sequential([hub.KerasLayer(classifier_model, input_shape = shape)])    
