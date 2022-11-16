@@ -43,8 +43,9 @@ def predict_class(image) :
 
     prediction = model.predict(test_image)
     confidence = round(100 * (np.max(prediction[0])), 2)
+    cause = class_name[np.argmax(prediction)]
     final_pred = class_name[np.argmax(prediction)]
-    return final_pred, confidence
+    return final_pred, confidence ,cause
 
 footer = """<style>
 a:link , a:visited{
