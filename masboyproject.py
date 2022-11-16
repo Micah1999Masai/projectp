@@ -25,7 +25,7 @@ def main() :
         plt.imshow(image)
         plt.axis('off')
         st.pyplot(figure)
-        result, confidence = predict_class(image)
+        result, confidence ,cause = predict_class(image)
         st.write('Prediction : {}'.format(result))
         st.write('Confidence : {}%'.format(confidence))
 
