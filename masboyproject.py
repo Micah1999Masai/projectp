@@ -25,7 +25,7 @@ def main() :
         plt.imshow(image)
         plt.axis('off')
         st.pyplot(figure)
-        result, confidence ,cause = predict_class(image)
+        result, confidence = predict_class(image)
         st.write('Prediction : {}'.format(result))
         st.write('Confidence : {}%'.format(confidence))
 
@@ -43,7 +43,6 @@ def predict_class(image) :
 
     prediction = model.predict(test_image)
     confidence = round(100 * (np.max(prediction[0])), 2)
-    cause = class_name[np.argmax(prediction)]
     final_pred = class_name[np.argmax(prediction)]
     return final_pred, confidence ,cause
 
