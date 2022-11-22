@@ -39,8 +39,8 @@ def predict_class(image) :
     test_image = image.resize((256, 256))
     test_image = keras.preprocessing.image.img_to_array(test_image)
     test_image /= 255.0
-    test_image = np.expand_dims(test_image, axis = 0)
-    recomm_name = [ 'cut_down_all_leaves', 'poor_fertilizers' , 'add_grain'] 
+    test_image = np.expand_dims(test_image, axis = 0) 
+    recomm_name = ['Potato__health', 'Potato__Late_bliht', 'Potato__Erly_blight']
     class_name = ['Potato__healthy', 'Potato__Late_blight', 'Potato__Early_blight']
 
     prediction = model.predict(test_image)
