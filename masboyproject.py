@@ -27,6 +27,7 @@ def main() :
         st.pyplot(figure)
         result, confidence = predict_class(image)
         st.write('Prediction : {}'.format(result)
+                 
         st.write('Confidence : {}%'.format(confidence))
                  
 
