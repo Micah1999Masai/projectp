@@ -26,8 +26,7 @@ def main() :
         plt.axis('off')
         st.pyplot(figure)
         result, confidence = predict_class(image)
-        st.write('Prediction : {}'.format(result))
-        st.write('recommendation :{}'.format(recommendation))
+        st.write('Prediction : {}'.format(result)
         st.write('Confidence : {}%'.format(confidence))
 
 def predict_class(image) :
@@ -40,13 +39,12 @@ def predict_class(image) :
     test_image = keras.preprocessing.image.img_to_array(test_image)
     test_image /= 255.0
     test_image = np.expand_dims(test_image, axis = 0) 
-    recomm_name = ['Potato__health', 'Potato__Late_bliht', 'Potato__Erly_blight']
     class_name = ['Potato__healthy', 'Potato__Late_blight', 'Potato__Early_blight']
 
     prediction = model.predict(test_image)
     confidence = round(100 * (np.max(prediction[0])), 2)
     final_pred = class_name[np.argmax(prediction) 
-    return final_pred, confidence ,recommendation
+    return final_pred, confidence 
 
 footer = """<style>
 a:link , a:visited{
