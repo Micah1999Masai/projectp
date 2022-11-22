@@ -46,7 +46,7 @@ def predict_class(image) :
     prediction = model.predict(test_image)
     confidence = round(100 * (np.max(prediction[0])), 2)
     final_pred = class_name[np.argmax(prediction)
-    recommendation = recomm_name[np.argmax(prediction)
+    recommendation = recomm_name[np.argmax(recommendation)
     return final_pred, confidence ,recommendation
 
 footer = """<style>
