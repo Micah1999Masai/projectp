@@ -28,6 +28,7 @@ def main() :
         result, confidence = predict_class(image)
         st.write('Prediction : {}'.format(result)
         st.write('Confidence : {}%'.format(confidence))
+                 
 
 def predict_class(image) :
     with st.spinner('Loading Model...'):
