@@ -31,20 +31,15 @@ def main() :
 
 def predict_class(image) :
     with st.spinner('Loading Model...'):
-        classifier_model = keras.models.load_model(r'masboy.h5', compile = True)
+        classifier_model = keras.models.load_model(r'final_model.h5', compile = False)
 
     shape = ((256,256,3))
     model = keras.Sequential([hub.KerasLayer(classifier_model, input_shape = shape)])    
     test_image = image.resize((256, 256))
     test_image = keras.preprocessing.image.img_to_array(test_image)
     test_image /= 255.0
-    test_image = np.expand_dims(test_image, axis = 0) 
-    class_name = ['Potato__healthy', 'Potato__Late_blight', 'Potato__Early_blight']
-
-    prediction = model.predict(test_image)
-    confidence = round(100 * (np.max(prediction[0])), 2)
-    final_pred = class_name[np.argmax(prediction) 
-    return final_pred, confidence 
+    test_image = np.expand_dims(test_image, axis = 0)
+    class_name = ['Potato__Early_blight', 'Potato__Late_blight', 'Potato__healthy']
 
 footer = """<style>
 a:link , a:visited{
