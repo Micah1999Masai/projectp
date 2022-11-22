@@ -44,7 +44,7 @@ def predict_class(image) :
 
 footer = """<style>
 a:link , a:visited{
-    color: white;
+    color: blue;
     background-color: transparent;
     text-decoration: None;
 }
