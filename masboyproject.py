@@ -12,7 +12,7 @@ hide_streamlit_style = """
             footer {visibility: hidden;}
             </style>
             """
-st.markdown(hide_streamlit_style, unsafe_allow_html = False)
+st.markdown(hide_streamlit_style, unsafe_allow_html = True)
 
 st.title('Potato Leaf Disease Identification And Classification')
 
@@ -31,7 +31,7 @@ def main() :
 
 def predict_class(image) :
     with st.spinner('Loading Model...'):
-        classifier_model = keras.models.load_model(r'potatoes.h5', compile = True)
+        classifier_model = keras.models.load_model(r'potatoes.h5', compile = False)
 
     shape = ((256,256,3))
     model = keras.Sequential([hub.KerasLayer(classifier_model, input_shape = shape)])    
