@@ -39,7 +39,7 @@ def predict_class(image) :
     test_image = keras.preprocessing.image.img_to_array(test_image)
     test_image /= 255.0
     test_image = np.expand_dims(test_image, axis = 0)
-    class_name = ['the disease is Potato__Early_blight.try to maintaining optimum growing conditions, including proper fertilization, irrigation, and management of other pests.', 'Potato__Late_blight', 'Potato__healthy']
+    class_name = ['the disease is Potato__Early_blight.We recommend that you Try to maintaining optimum growing conditions, including proper fertilization, irrigation, and management of other pests.', 'Potato__Late_blight', 'Potato__healthy']
 
     prediction = model.predict(test_image)
     confidence = round(100 * (np.max(prediction[0])), 2)
