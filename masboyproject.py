@@ -71,7 +71,6 @@ a:hover,  a:active {
 }
 </style>
 <div class="footer">
-<p align="center"> <a href="https://www.masboy.com//">mas boy in action</a></p>
 </div>
         """
 
