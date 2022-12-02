@@ -41,11 +41,12 @@ def predict_class(image) :
     test_image /= 255.0
     test_image = np.expand_dims(test_image, axis = 0)
     class_name = ['Potato__Early_blight', 'Potato__Late_blight', 'Potato__healthy']
+    recom_names = ['Potato__Early', 'Potato__Late', 'Potato__heal']
 
     prediction = model.predict(test_image)
     confidence = round(100 * (np.max(prediction[0])), 2)
     final_pred = class_name[np.argmax(prediction)]
-    recommendation = class_name[np.argmax(prediction)]
+    recommendation = recom_names[np.argmax(prediction)]
     return final_pred,recommendation,confidence
 
 footer = """<style>
