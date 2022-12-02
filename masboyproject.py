@@ -25,9 +25,10 @@ def main() :
         plt.imshow(image)
         plt.axis('off')
         st.pyplot(figure)
-        result, confidence = predict_class(image)
+        result, recommendation, confidence = predict_class(image)
         st.write('Prediction : {}'.format(result))
-        st.write('recommendation :{}'.format(result))
+            st.write('recommendation :{}'.format(result))
+            
         st.write('Confidence : {}%'.format(confidence))
 
 def predict_class(image) :
@@ -44,9 +45,9 @@ def predict_class(image) :
 
     prediction = model.predict(test_image)
     confidence = round(100 * (np.max(prediction[0])), 2)
-    final_pred = class_name[np.argmax(prediction)
-    recommendation = class_name[np.argmax(prediction)]
-    return final_pred,confidence,recommendation
+            final_pred = class_name[np.argmax(prediction)]
+            recommendation = class_name[np.argmax(prediction)]
+   return final_pred,confidence,recommendation
 
 footer = """<style>
 a:link , a:visited{
