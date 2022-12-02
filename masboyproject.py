@@ -27,9 +27,9 @@ def main() :
         st.pyplot(figure)
         result, recommendation, confidence = predict_class(image)
         st.write('Prediction : {}'.format(result))
-        st.write('recommendation :{}'.format(recommendation))
         st.write('Confidence : {}%'.format(confidence))
-
+        st.write('recommendation :{}'.format(recommendation))
+       
 def predict_class(image) :
     with st.spinner('Loading Model...'):
         classifier_model = keras.models.load_model(r'potatoes.h5', compile = False)
