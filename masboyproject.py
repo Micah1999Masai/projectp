@@ -41,7 +41,7 @@ def predict_class(image) :
     test_image /= 255.0
     test_image = np.expand_dims(test_image, axis = 0)
     class_name = ['Potato__Early_blight', 'Potato__Late_blight', 'Potato__healthy']
-    recom_names = ['Try to maintain optimum growing conditions, including proper fertilization, irrigation, and management of other pests.Spray protectant fungicides for early blight management', 'Eliminating cull piles and volunteer potatoes, using proper harvesting and storage practices, and applying fungicides when necessary. Air drainage to facilitate the drying of foliage each day is important.', 'Maintain even moisture, especially from the time after the flowers bloom.Constantly monitor for any infections']
+    recom_names = ['Try to maintain optimum growing conditions, including proper fertilization, irrigation, and management of other pests.Spray protectant fungicides for early blight management', 'Eliminate cull piles and volunteer potatoes, use proper harvesting and storage practices, and apply fungicides for potato late blight . Air drainage to facilitate the drying of foliage each day is important.', 'Maintain even moisture, especially from the time after the flowers bloom.Constantly monitor for any infections']
 
     prediction = model.predict(test_image)
     confidence = round(100 * (np.max(prediction[0])), 2)
